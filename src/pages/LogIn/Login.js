@@ -1,6 +1,7 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import app from "../../firebase.init";
 
 const auth = getAuth(app);
@@ -22,6 +23,7 @@ const Login = () => {
       console.error(error);
     })
   };
+  // After Signout page is Blank need to redirect homepage
   const handleSignOut = () =>{
     const auth = getAuth();
     signOut(auth)
@@ -51,9 +53,11 @@ const Login = () => {
       </Form>
       <br/>
       {
-        user ? <button onClick={handleSignOut} className="btn btn-primary" > SignOut </button>
+        user ? <button onClick={handleSignOut} className="btn btn-primary" > 
+        <Link className="text-white text-decoration-none" to='/' >SignOut </Link>
+         </button>
         :
-        <button onClick={handleGoogleSignIn} className="btn btn-primary" > Google Sign In </button>
+        <button onClick={handleGoogleSignIn} className="btn btn-primary" > <Link className="text-white text-decoration-none" to='/' >SignIn </Link> </button>
       }<br/>
       <h2 className="text-primary"> {user} </h2>
       
