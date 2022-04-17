@@ -10,6 +10,9 @@ import Login from './pages/LogIn/Login';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './Shared/Footer/Footer';
 import Header from './Shared/Header/Header';
+import BookNow from './pages/RequireAuth/BookNow/BookNow';
+import RequireAuth from './pages/RequireAuth/RequireAuth';
+import AboutMe from './pages/AboutMe/AboutMe';
 
 function App() {
   return (
@@ -17,11 +20,19 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home> } ></Route>
+        <Route path='/home' element={<Home></Home> } ></Route>
         <Route path='/blog' element={<Blog></Blog> } ></Route>
-        <Route path='/services' element={<Services></Services>} > </Route>
         <Route path='/service' element={<Service></Service>} ></Route>
         <Route path='/login' element={<Login></Login> } ></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
+        <Route path='/aboutme' element={<AboutMe></AboutMe>} ></Route>
+        <Route path='/booknow' element={
+          <RequireAuth>
+            <BookNow></BookNow>
+          </RequireAuth>
+        } >
+
+        </Route>
         <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
       <Footer></Footer>
