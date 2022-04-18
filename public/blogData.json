@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "title":"Authentication vs Autherization",
+      "description": "Unknown people do not visit or get access private section. When the people register then he access visit private or secure part of website. People registration system cald authentication like as google firebase authentication system. Google Firebase is not Authentication this working process or system is approved or authentication. Autherization: Autherization user is Verified or Registerd user. When the user trying to loging if he registered user thats called Autherization user then autherization people can login successfully. Otherwise You can register by authentication system with google firebaseSuthentication system. So we call Authentication registration system process and authorization is approved user by eny kinds of authentication system. "
+    },
+    {
+      "id": "2",
+      "title":"Why I use firebase?",
+      "description": "Firebase is very easy to use my app. Its very easy to setup configuration. User data secured and fast service. If I use my server system then need to many more coding and my secure system is not secure so i use this firebase for this reasons. Firebase alternative is 1. Okta, 2. MongoDb, 3. Auth0, 4. Passport, 5. Json Web Token, 6. Amazon Cognito, 7. keycloak"
+    },
+    {
+      "id": "3",
+      "title":"About Me",
+      "description": "I'm Ranjit Kumar Mandal. I'm a small business owner. I want to increase my income with freelancing or some own small webdevelopment company for local country or international company, I'm trying to develop my skill. End of this year 2022 around septembor I could add some extra income from my webdevelopment knowledge"
+    }
+  ]

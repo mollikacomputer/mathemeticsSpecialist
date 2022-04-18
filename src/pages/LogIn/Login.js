@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import app from "../../firebase.init";
 
 const auth = getAuth(app);
+
 const Login = () => {
+
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
-
   const handleGoogleSignIn = () =>{
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
@@ -60,8 +61,8 @@ const Login = () => {
         <button onClick={handleGoogleSignIn} className="btn btn-primary" > <Link className="text-white text-decoration-none" to='/' >SignIn </Link> </button>
       }<br/>
       <h2 className="text-primary"> {user} </h2>
+     
       
-      {/* <button onClick={handleSignOut} className="btn btn-primary" > SignOut </button> */}
       
     </div>
   );

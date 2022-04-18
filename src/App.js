@@ -2,8 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './pages/Home/Home';
-import Blog from './pages/Blog/Blog';
-import Services from './pages/Services/Services';
 import Service from './pages/Service/Service';
 import Register from './pages/Register/Register';
 import Login from './pages/LogIn/Login';
@@ -13,6 +11,7 @@ import Header from './Shared/Header/Header';
 import BookNow from './pages/RequireAuth/BookNow/BookNow';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 import AboutMe from './pages/AboutMe/AboutMe';
+import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home> } ></Route>
         <Route path='/home' element={<Home></Home> } ></Route>
-        <Route path='/blog' element={<Blog></Blog> } ></Route>
+        <Route path='/blogs' element={<Blogs></Blogs> } ></Route>
         <Route path='/service' element={<Service></Service>} ></Route>
         <Route path='/login' element={<Login></Login> } ></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
