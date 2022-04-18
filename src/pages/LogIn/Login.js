@@ -7,9 +7,10 @@ import app from "../../firebase.init";
 const auth = getAuth(app);
 
 const Login = () => {
-
+  
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
+  
   const handleGoogleSignIn = () =>{
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
@@ -35,10 +36,11 @@ const Login = () => {
       setUser({});
     })
   }
+
   return (
     <div className='my-5 py-3 w-50 mx-auto'>
       <h2 className="text-primary" > Please Log in</h2>
-      <Form>
+      <Form >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
@@ -58,12 +60,12 @@ const Login = () => {
         <Link className="text-white text-decoration-none" to='/' >SignOut </Link>
          </button>
         :
-        <button onClick={handleGoogleSignIn} className="btn btn-primary" > <Link className="text-white text-decoration-none" to='/' >SignIn </Link> </button>
+        <button onClick={handleGoogleSignIn} className="btn btn-primary" > <Link className="text-white text-decoration-none" to='/' > google SignIn </Link> </button>
       }<br/>
       <h2 className="text-primary"> {user} </h2>
-     
-      
-      
+      <Link className="text-muted text-decoration-none" style={{cursor:'pointer'}} to="/register">
+        Are you New user? Then You can <span className="text-primary" > Register</span>  From here
+      </Link>
     </div>
   );
 };
