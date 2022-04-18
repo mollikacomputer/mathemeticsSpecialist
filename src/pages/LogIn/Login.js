@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup, signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ const Login = () => {
 
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
+
   const handleGoogleSignIn = () =>{
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
@@ -36,9 +37,14 @@ const Login = () => {
     .catch(error => {
       setUser({});
     })
-    
+  
   }
-
+ const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log('email sent')
+      })
+  }
   return (
     <div className='my-5 py-3 w-50 mx-auto'>
       <h2 className="text-primary" > Please Log in</h2>
@@ -55,6 +61,7 @@ const Login = () => {
         <Button variant="primary w-100" type="submit">
          Log in
         </Button>
+        <button className="btn " onClick={handlePasswordReset} > Forgot Password? Reset password</button>
       </Form>
       <br/>
       {
