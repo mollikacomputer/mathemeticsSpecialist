@@ -12,7 +12,6 @@ const Login = () => {
 
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
-  
   const handleGoogleSignIn = () =>{
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)

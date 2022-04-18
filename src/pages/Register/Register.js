@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification } from "firebase/auth";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -27,13 +27,19 @@ const Register = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            verifyEmail();
         })
         .catch(error => {
             console.error(error)
         })
         console.log(username, password, email);
       }
-
+      const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            console.log('Email Verification Sent');
+          })
+      }
   return (
     <div className="my-5 py-3 w-50 mx-auto">
       <h2 className="text-primary"> Please Register</h2>
