@@ -12,14 +12,6 @@
     {
       "id": "3",
       "title":"without authentication How many service have google firebase ",
-      "description": "Many more firebase services like as Hosting service and deploy website. Mobile Application deploy and have software playstore service There are many services which Firebase provides, Most useful of them are:
-
-     1. Cloud Firestore.
-      2. Cloud Functions.
-      3. Hosting.
-      4. Cloud Storage.
-     5. Google Analytics.
-      6. Predictions.
-      7. Cloud Messaging."
+      "description": "Many more firebase services like as Hosting service and deploy website. Mobile Application deploy and have software playstore service There are many services which Firebase provides, Most useful of them are 1. Cloud Firestore. 2. Cloud Functions. 3. Hosting. 4. Cloud Storage 5. Google Analytics. 6. Predictions. 7. Cloud Messaging."
     }
   ]

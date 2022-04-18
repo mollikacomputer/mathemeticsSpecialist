@@ -4,8 +4,8 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import app from "../../firebase.init";
 import Header from "../../Shared/Header/Header";
-
-
+import googleImg from '../../images/google.png';
+import './Login.css'
 const auth = getAuth(app);
 
 const Login = () => {
@@ -62,7 +62,9 @@ const Login = () => {
         <Link className="text-white text-decoration-none" to='/' >SignOut </Link>
          </button>
         :
-        <button onClick={handleGoogleSignIn} className="btn btn-primary" > Sign In </button>
+        <button onClick={handleGoogleSignIn} className="btn btn-primary" > 
+         <img className="googleImg" src={googleImg} alt="" /> Sign In 
+         </button>
       }<br/>
       <h2 className="text-primary">
         User Name: {user}
