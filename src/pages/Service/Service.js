@@ -13,7 +13,8 @@ const Service = (props) => {
         <Card.Title className="text-primary"> Price {price} </Card.Title>
         <Card.Text>{description}</Card.Text>
           <Link to='./booknow' > 
-          <Button  variant="primary"> Book Now</Button> </Link> 
+              <Button  variant="primary"> Book Now</Button> 
+          </Link> 
       </Card.Body>
     </Card>
   );

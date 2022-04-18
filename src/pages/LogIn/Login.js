@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import app from "../../firebase.init";
+import Header from "../../Shared/Header/Header";
+
 
 const auth = getAuth(app);
 
 const Login = () => {
-  
+
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   
@@ -19,7 +21,7 @@ const Login = () => {
       setUser(user.displayName);
       setEmail(user.email);
       // console.log(user.displayName, user.email);
-      
+      <Header user={user} ></Header>
     })
     .catch(error=>{
       console.error(error);
@@ -35,6 +37,7 @@ const Login = () => {
     .catch(error => {
       setUser({});
     })
+    
   }
 
   return (
@@ -60,9 +63,11 @@ const Login = () => {
         <Link className="text-white text-decoration-none" to='/' >SignOut </Link>
          </button>
         :
-        <button onClick={handleGoogleSignIn} className="btn btn-primary" > <Link className="text-white text-decoration-none" to='/' > google SignIn </Link> </button>
+        <button onClick={handleGoogleSignIn} className="btn btn-primary" > Sign In </button>
       }<br/>
-      <h2 className="text-primary"> {user} </h2>
+      <h2 className="text-primary">
+        User Name: {user}
+         </h2>
       <Link className="text-muted text-decoration-none" style={{cursor:'pointer'}} to="/register">
         Are you New user? Then You can <span className="text-primary" > Register</span>  From here
       </Link>

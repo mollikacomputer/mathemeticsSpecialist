@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Button, Container, Form, FormControl, Nav, Navbar } from "react-bootstrap";
+import { getAuth } from "firebase/auth";
+import React from "react";
+import { Container,Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Header.css';
-const Header = () => {
+
+const Header = ({user}) => {
   return (
     <div>
       <Navbar fixed="top" bg="light" expand="lg">
@@ -20,7 +22,7 @@ const Header = () => {
               <Nav.Link as={Link} to="/register">Register</Nav.Link>
               <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
               <Nav.Link as={Link} to="/aboutme">About Me</Nav.Link>
-              
+              <Nav.Link as={Link} to="/booknow">BookNow</Nav.Link> 
             </Nav>
           </Navbar.Collapse>
         </Container>
